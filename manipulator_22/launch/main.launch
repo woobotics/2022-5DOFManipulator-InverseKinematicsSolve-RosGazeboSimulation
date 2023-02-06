@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+ <include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+ <!-- true면 정지상태로 시작, false면 실행하자마자 바로 시작 -->
+ <arg name="paused" default="false"/>
+ <arg name="headless" value="false"/>
+ <arg name="debug" value="false"/>
+
+ <!-- manipulator_22.world 실행 -->
+ <arg name="world_name" value="$(find gazebo_plugin)/worlds/manipulator_22.world"/>
+ </include>
+
+<!-- JOY ROS NODE -->
+<!--        <node respawn="true" pkg="joy" type="joy_node" name="ps4_joy" >
+        <param name="dev" type="string" value="/dev/input/js0" />
+        <param name="deadzone" value="0.12" />
+        </node>-->
+
+
+ <node name="manipulator_22" pkg="manipulator_22" type="manipulator_22" required="true" output="screen"/>
+
+</launch>
