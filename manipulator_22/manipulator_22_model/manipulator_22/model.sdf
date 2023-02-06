@@ -1,0 +1,693 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <model name='manipulator_22'>
+
+    <joint name='fix2mobile' type='fixed'>
+      <child>mobilebase_link</child>
+      <parent>world</parent>
+    </joint>
+
+    <link name='mobilebase_link'>
+      <pose frame=''>0.23565 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.1125 0 -0 0</pose>
+        <mass>57.488</mass>
+        <inertia>
+          <ixx>0.92078</ixx>
+          <ixy>1.8338e-17</ixy>
+          <ixz>6.5741e-18</ixz>
+          <iyy>2.4241</iyy>
+          <iyz>3.2697e-33</iyz>
+          <izz>2.8913</izz>
+        </inertia>
+      </inertial>
+      <collision name='mobilebase_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='mobilebase_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/mobilebase_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name='fix2Lidar' type='fixed'>
+      <child>Lidar_Link</child>
+      <parent>world</parent>
+    </joint>
+
+    <link name='Lidar_Link'>
+      <pose frame=''>-0.08609 0 0.3452 0 -0 3.1415926535</pose>
+      <inertial>
+        <pose frame=''>0.01542 -0 -0.010795 0 -0 0</pose>
+        <mass>0.26907</mass>
+        <inertia>
+          <ixx>0.00011173</ixx>
+          <ixy>6.7755e-12</ixy>
+          <ixz>-2.5338e-05</ixz>
+          <iyy>0.00034143</iyy>
+          <iyz>5.6604e-12</iyz>
+          <izz>0.00030859</izz>
+        </inertia>
+      </inertial>
+      <collision name='Lidar_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Lidar_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Lidar_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Lidar_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='fix2mani' type='fixed'>
+      <child>base_link</child>
+      <parent>world</parent>
+    </joint>
+
+
+    <link name='base_link'>
+      <pose frame=''>0 0 0.225 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-6e-06 -0 0.060832 0 -0 0</pose>
+        <mass>0.333983</mass>
+        <inertia>
+          <ixx>0.000496911</ixx>
+          <ixy>3.82278e-13</ixy>
+          <ixz>-6.77055e-08</ixz>
+          <iyy>0.00049753</iyy>
+          <iyz>-1.15275e-13</iyz>
+          <izz>0.000146583</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='Link1'>
+      <pose frame=''>0 0 0.351 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-8.7e-05 0.002441 0.038159 0 -0 0</pose>
+        <mass>0.385049</mass>
+        <inertia>
+          <ixx>0.000533843</ixx>
+          <ixy>-1.15276e-13</ixy>
+          <ixz>3.82278e-13</ixz>
+          <iyy>0.000198646</iyy>
+          <iyz>1.63662e-08</iyz>
+          <izz>0.000536773</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link1_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Link1_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='Joint1' type='revolute'>
+      <child>Link1</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.141592</lower>
+          <upper>3.141592</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link2'>
+      <pose frame=''>-0.0001 -0.0005 0.3911 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.371905 0.001656 0.022734 0 -0 0</pose>
+        <mass>0.571595</mass>
+        <inertia>
+          <ixx>0.000945607</ixx>
+          <ixy>3.50914e-08</ixy>
+          <ixz>-6.37778e-06</ixz>
+          <iyy>0.00244776</iyy>
+          <iyz>-5.4208e-08</iyz>
+          <izz>0.00312789</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link2_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Link2_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='Joint2' type='revolute'>
+      <child>Link2</child>
+      <parent>Link1</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.79</lower>
+          <upper>0</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link3'>
+
+
+      <pose frame=''>0.4679 -0.0005 0.428585 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.176444 1e-06 0.025133 0 -0 0</pose>
+        <mass>0.213783</mass>
+        <inertia>
+          <ixx>0.000317312</ixx>
+          <ixy>2.32621e-08</ixy>
+          <ixz>4.5993e-05</ixz>
+          <iyy>0.00130919</iyy>
+          <iyz>5.0035e-09</iyz>
+          <izz>0.00150313</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link3_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.8 0.8 0.8</scale>
+            <uri>model://manipulator_22/meshes/Link3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Link3_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Joint3' type='revolute'>
+      <child>Link3</child>
+      <parent>Link2</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>2.65</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link4'>
+
+
+
+      <pose frame=''>0.14757 -0.0005 0.461032 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.04408 -6e-05 -0 0 -0 0</pose>
+        <mass>0.0993584</mass>
+        <inertia>
+          <ixx>2.72147e-05</ixx>
+          <ixy>3.82942e-07</ixy>
+          <ixz>-1.81254e-13</ixz>
+          <iyy>3.57338e-05</iyy>
+          <iyz>-1.63962e-13</iyz>
+          <izz>4.55192e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link4_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.8 0.8 0.8</scale>
+            <uri>model://manipulator_22/meshes/Link4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Link4_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='Joint4' type='revolute'>
+      <child>Link4</child>
+      <parent>Link3</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.745</lower>
+          <upper>1.745</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link5'>
+
+
+      <pose frame=''>0.08347 -0.0005 0.461032 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.091252 -0 -0.005065 0 -0 0</pose>
+        <mass>0.234118</mass>
+        <inertia>
+          <ixx>6.33801e-05</ixx>
+          <ixy>8.17782e-09</ixy>
+          <ixz>8.06391e-07</ixz>
+          <iyy>6.79521e-05</iyy>
+          <iyz>2.67206e-10</iyz>
+          <izz>7.2256e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link5_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.8 0.8 0.8</scale>
+            <uri>model://manipulator_22/meshes/Link5.STL</uri>
+          </mesh>
+        </geometry>
+
+
+
+      </collision>
+      <visual name='Link5_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name='Joint5' type='revolute'>
+      <child>Link5</child>
+      <parent>Link4</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.745</lower>
+          <upper>1.745</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link_back_left'>
+
+      <self_collide>1</self_collide>
+
+      <pose frame=''>-0.012 0.1903 0.1125 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.031045 0.12113 0 -0 0</pose>
+        <mass>4.0125</mass>
+        <inertia>
+          <ixx>0.070145</ixx>
+          <ixy>-7.7504e-17</ixy>
+          <ixz>-1.9791e-16</ixz>
+          <iyy>0.081187</iyy>
+          <iyz>-8.2827e-06</iyz>
+          <izz>0.012461</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link_back_left_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1.1 1.1 1.1</scale>
+            <uri>model://manipulator_22/meshes/Link_back_left.STL</uri>
+          </mesh>
+        </geometry>
+
+	<surface>
+	 <bounce>
+	  <restitution_coefficient> 1000000000 </restitution_coefficient>
+	  <threshold> 100000 </threshold>
+	 </bounce>
+	 <contact>
+	  <ode>
+	   <soft_cfm> 0 </soft_cfm>
+	   <soft_erp> 0.5 </soft_erp>
+	   <kp>  1000000000000 </kp>
+	   <kd> 1000000 </kd>
+	   <max_vel> 1000000 </max_vel>
+	   <min_depth> 0.0 </min_depth>
+	  </ode>
+	 </contact>
+	</surface>
+
+
+
+      </collision>
+      <visual name='Link_back_left_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link_back_left.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Joint_back_left' type='revolute'>
+      <child>Link_back_left</child>
+      <parent>mobilebase_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.141592</lower>
+          <upper>3.141592</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link_back_right'>
+
+      <self_collide>1</self_collide>
+
+      <pose frame=''>-0.012 -0.1903 0.1125 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0 -0.031045 0.12113 0 -0 0</pose>
+        <mass>4.0125</mass>
+        <inertia>
+          <ixx>0.070145</ixx>
+          <ixy>-8.9919e-20</ixy>
+          <ixz>2.0164e-16</ixz>
+          <iyy>0.081187</iyy>
+          <iyz>8.2827e-06</iyz>
+          <izz>0.012461</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link_back_right_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1.1 1.1 1.1</scale>
+            <uri>model://manipulator_22/meshes/Link_back_right.STL</uri>
+          </mesh>
+        </geometry>
+
+	<surface>
+	 <bounce>
+	  <restitution_coefficient> 1000000000 </restitution_coefficient>
+	  <threshold> 100000 </threshold>
+	 </bounce>
+	 <friction>
+
+	 </friction>
+	 <contact>
+	  <ode>
+	   <soft_cfm> 0 </soft_cfm>
+	   <soft_erp> 0.5 </soft_erp>
+	   <kp>  1000000000000 </kp>
+	   <kd> 1000000 </kd>
+	   <max_vel> 1000000 </max_vel>
+	   <min_depth> 0.0 </min_depth>
+	  </ode>
+	 </contact>
+	</surface>
+
+
+
+      </collision>
+      <visual name='Link_back_right_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link_back_right.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Joint_back_right' type='revolute'>
+      <child>Link_back_right</child>
+      <parent>mobilebase_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.141592</lower>
+          <upper>3.141592</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link_front_left'>
+
+      <self_collide>1</self_collide>
+      <max_contacts> 100 </max_contacts>
+      <pose frame=''>0.4833 0.1903 0.1125 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.031045 0.12113 0 -0 0</pose>
+        <mass>4.0125</mass>
+        <inertia>
+          <ixx>0.070145</ixx>
+          <ixy>-7.8238e-17</ixy>
+          <ixz>-1.9719e-16</ixz>
+          <iyy>0.081187</iyy>
+          <iyz>-8.2827e-06</iyz>
+          <izz>0.012461</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link_front_left_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1.1 1.1 1.1</scale>
+            <uri>model://manipulator_22/meshes/Link_front_left.STL</uri>
+          </mesh>
+        </geometry>
+
+	<surface>
+	 <contact>
+	  <ode>
+	   <soft_cfm> 0 </soft_cfm>
+	   <soft_erp> 0.5 </soft_erp>
+	   <kp>  1000000000000 </kp>
+	   <kd> 100 </kd>
+	   <max_vel> 0 </max_vel>
+	   <min_depth> 0.0 </min_depth>
+	  </ode>
+	 </contact>
+	</surface>
+
+
+      </collision>
+      <visual name='Link_front_left_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link_front_left.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Joint_front_left' type='revolute'>
+      <child>Link_front_left</child>
+      <parent>mobilebase_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.141592</lower>
+          <upper>3.141592</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <link name='Link_front_right'>
+
+      <self_collide>1</self_collide>
+
+      <max_contacts> 100 </max_contacts>
+      <pose frame=''>0.4833 -0.1903 0.1125 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0 -0.031045 0.12113 0 -0 0</pose>
+        <mass>4.0125</mass>
+        <inertia>
+          <ixx>0.070145</ixx>
+          <ixy>-1.4122e-20</ixy>
+          <ixz>1.9625e-16</ixz>
+          <iyy>0.081187</iyy>
+          <iyz>8.2827e-06</iyz>
+          <izz>0.012461</izz>
+        </inertia>
+      </inertial>
+      <collision name='Link_front_right_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1.1 1.1 1.1</scale>
+            <uri>model://manipulator_22/meshes/Link_front_right.STL</uri>
+          </mesh>
+        </geometry>
+
+	<surface>
+	 <contact>
+	  <ode>
+	   <soft_cfm> 0 </soft_cfm>
+	   <soft_erp> 0.5 </soft_erp>
+	   <kp>  1000000000000 </kp>
+	   <kd> 100 </kd>
+	   <max_vel> 0 </max_vel>
+	   <min_depth> 0.0 </min_depth>
+	  </ode>
+	 </contact>
+	</surface>
+
+
+
+      </collision>
+      <visual name='Link_front_right_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://manipulator_22/meshes/Link_front_right.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Joint_front_right' type='revolute'>
+      <child>Link_front_right</child>
+      <parent>mobilebase_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.141592</lower>
+          <upper>3.141592</upper>
+          <effort>10</effort>
+          <velocity>4</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+  </model>
+</sdf>
